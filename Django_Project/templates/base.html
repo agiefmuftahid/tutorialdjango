@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        {% include "snippets/style.html"%}
+        {% block app_css%}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+        {% endblock app_css%}
+        <title>{{judul}}</title>
+    </head>
+
+    <body>
+        {% include "snippets/navbar.html"%}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-white text-center">
+                {% block header%}
+
+                {% endblock header%}
+            </div>
+        </div>
+        <div class="container-fluid">
+            <!-- <img id="banner" src="{% static img %}" alt="">
+            <nav>
+                <ul>
+                    {% for link,name in nav%}
+                    <li>
+                        <a href="{{link}}">{{name}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav> -->
+            <div class="container bg-info text-dark shadow" style="margin-top:-100px" id="myBody">
+                {% block konten1%}
+
+                {% endblock konten1%}
+            </div>
+            <div class="container bg-warning text-white shadow">
+                {% block konten2%}
+
+                {% endblock konten2%}
+            </div>
+        </div>
+
+        {% include "snippets/script.html"%}
+    </body>
+
+</html>
